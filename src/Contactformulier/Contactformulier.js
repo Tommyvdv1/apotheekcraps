@@ -14,7 +14,8 @@ const Contactformulier = () =>{
      //        			<option value="support" selected="selected">Support</option>
      //        			<option value="accounts">Accounts</option>
      //    			</select>
-     //    			<br/>}
+     //    			<br/>
+ 					}
 					<div class="form-group">
 						<label class="col-md-2 control-label" for="name_first"> Voornaam</label>  
 					
