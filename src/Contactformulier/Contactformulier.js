@@ -1,4 +1,5 @@
 import React from 'react';
+import ReCAPTCHA from "react-google-recaptcha";
 
 
 
@@ -12,6 +13,7 @@ constructor() {
       email:'',
       subject:'',
       message:'',
+      recaptcha: false,
     }
   }
 
@@ -35,7 +37,18 @@ messageChange = (event) => {
 	this.setState({message:event.target.value});
 }
 
-onButtonClick = () => {
+recaptchaChange =() => {
+	console.log(this.state.recaptcha);
+	if (this.state.recaptcha) {
+		this.setState({recaptcha: false });
+	}
+	else {
+		this.setState({recaptcha: true });
+	}
+	
+}
+
+onButtonClick = (event) => {
 	fetch('https://young-reaches-39897.herokuapp.com/sendmail', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
@@ -47,15 +60,21 @@ onButtonClick = () => {
         message: this.state.message
         })
     })
-    .then(response =>response.json())
-    .then(res => console.log(res))
+    .then(response => response.json())
+    .then(res => window.alert(res));
+    event.preventDefault();
+    console.log("nu nog teruggaan naar de homepage");
+    this.props.Home();
 }
 
+//far fa-times-circle
 render () {
 	return(
 			<div className="modal-body">
-				<p className="float-right"><a href=''><i className="far fa-times-circle"></i></a></p>
-				<form id="contactForm" className="form-horizontal">
+				<div> 
+				<a className="nav-link" onClick={()=>{this.props.Home()}} ><i className="far fa-times-circle" style={{color:"#C04363", cursor: 'pointer'}}></i></a>
+				</div>
+				<form id="contactForm" className="form-horizontal" onSubmit={this.onButtonClick}>
 					{//<input type="hidden" name="contactForm" value="true"></input>
 					//<input type="hidden" name="apo_id" value="37646"></input>
 					//<input type="hidden" name="lang" value="nl"></input>
@@ -101,19 +120,19 @@ render () {
 					<div className="form-group">
 					 	<label className="col-md-2 control-label" htmlFor="recaptcha"></label>
 					 	<div className="col-md-10">
-					 		<div className="g-recaptcha" data-callback="enableForm" data-sitekey="6Lf5m3EUAAAAAKg9S93SY5b_JB5_170IZ0H6_7yG"></div>
+					 		<ReCAPTCHA className="g-recaptcha" onChange={this.recaptchaChange} sitekey="6Lf5m3EUAAAAAKg9S93SY5b_JB5_170IZ0H6_7yG" />
 					 	</div>
 					</div>
 					{// disabled toevoegen achter class="btn btn-success" bij button!!! 
 					}
 					<div className="form-group">
 						<label className="col-md-2 control-label" htmlFor="submit"></label>
-						{this.state.name_first === '' || this.state.name_last === '' || this.state.email === '' || this.state.subject === '' || this.state.message === ''? 
+						{this.state.name_first === '' || this.state.name_last === '' || this.state.email === '' || this.state.subject === '' || this.state.message === '' || this.state.recaptcha===false ? 
 						<div className="col-md-3">
 							<button id="submitContact" type="submit" className="btn btn-success" disabled> VERZENDEN</button>
 						</div> :
 						<div className="col-md-3">
-							<button id="submitContact" type="submit" className="btn btn-success" onClick={this.onButtonClick}> VERZENDEN</button>
+							<button id="submitContact" type="submit" className="btn btn-success"> VERZENDEN</button>
 						</div> 
 						}
 						{// <div class="col-md-7">

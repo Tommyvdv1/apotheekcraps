@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
-import Hoofding from './Hoofding';
-import Navbar from './Navbar';
-import Container from './Container';
-import Footer from './Footer';
-import {Homepage} from './Midden/Homepage';
+import Hoofding from './Startpagina/Hoofding';
+import Navbar from './Startpagina/Navbar';
+import Container from './Startpagina/Container';
+import Footer from './Startpagina/Footer';
+import Index from './Midden/Homepage/index';
 import Contactformulier from './Contactformulier/Contactformulier';
 // import {Huidanalyse} from './Midden/Huidanalyse';
 // import {Apotheeknieuws} from './Midden/Apotheeknieuws';
 // import {Team} from './Midden/Team';
+//
 
 
 class App extends Component {
 
+
   constructor() {
     super();
     this.state = {
-      Midden: Homepage,
+      Midden: <Index/>,
       Contactform: false,
     };
   }
@@ -34,7 +36,8 @@ class App extends Component {
 // }
 
 setHome = () => {
-  this.setState({Midden: Homepage});
+  this.setState({Midden: <Index/>});
+  this.setState({Contactform: false});
 }
 
 State = () => {
@@ -56,15 +59,16 @@ MenuItem = (item) => {
             />
         		<Container Midden={this.state.Midden}  
                         MenuItem={this.MenuItem}
+                        setState={this.State}
             />
-        		<Footer />
+        		<Footer setState={this.State} />
         	</div>
       );
     }
     else {
       return (
         <div>
-          <Contactformulier />
+          <Contactformulier Home={this.setHome} />
         </div>
         )
     }

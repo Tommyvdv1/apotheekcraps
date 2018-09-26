@@ -18,7 +18,7 @@ export const Huisapotheker = (
 						<a>De eerste is je toestemming voor </a><a className="font-weight-bold">‘voortgezette farmaceutische zorg’</a><a>, zodat je huisapotheker je een begeleiding kan aanbieden die afgestemd is op jouw noden.</a>
 					</li>
 					<li>
-						<a>De tweede is je </a><a className="font-weight-bold">geïnformeerde toestemming</a><a> voor het elektronisch uitwisselen van je gezondheidsgegevens tussen zorgverleners die je behandelen. Die uitwisseling komt de communicatie en de samenwerking tussen je verschillende zorgverleners ten goede, en dus ook je behandeling. Uitgebreide informatie over de geïnformeerde toestemming vind je <a href="https://www.apotheek.be/mijn-gezondheid/je-gezondheid-bevorderen/de-geinformeerde-toestemming-laat-uw-gezondheid-niet-aan">hier</a> terug.</a>
+						<a>De tweede is je </a><a className="font-weight-bold">geïnformeerde toestemming</a><a> voor het elektronisch uitwisselen van je gezondheidsgegevens tussen zorgverleners die je behandelen. Die uitwisseling komt de communicatie en de samenwerking tussen je verschillende zorgverleners ten goede, en dus ook je behandeling. Uitgebreide informatie over de geïnformeerde toestemming vind je </a><a href="https://www.apotheek.be/mijn-gezondheid/je-gezondheid-bevorderen/de-geinformeerde-toestemming-laat-uw-gezondheid-niet-aan">hier</a><a> terug.</a>
 					</li>
 				</ul>
 			</span>

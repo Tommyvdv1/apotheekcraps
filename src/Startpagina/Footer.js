@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Footer = () => {
+const Footer = ({setState}) => {
 	return (
 
 		<div className="container">
@@ -12,7 +12,7 @@ const Footer = () => {
 						<span style={{width:'100%'}}>Kapelstraat 4</span> - <span style={{width:'30%'}}>3900 </span>
 						<span style={{width:'70%'}}>OVERPELT</span><br/>
 						<span style={{width:'80%'}}>Tel: 011 64 32 91</span><br/>
-						<span style={{width:'100%'}}><a href="" data-toggle="modal" data-target="#myContact">Contact </a></span>
+						<span style={{width:'100%'}}><a href="" data-toggle="modal" onClick={setState} >Contact </a></span>
 						 - <a href="https://www.apotheeklimburg.be/">Wachtdiensten</a>
 						<br/>
 			            <small> Apotheker-Titularis: Annick Craps<br/>

@@ -1,13 +1,25 @@
 import React from 'react';
 import {links} from './Links';
+import'./Container.css';
 
-const Container = ({MenuItem, Midden}) => {
 
-  	const DropdownMenu = links.map((value, i) =>{
+
+const Container  = ({MenuItem, Midden, setState}) => {
+
+		
+
+
+
+		const DropdownMenu = links.map((value, i) => {
   			return (
-  			<a key={i} style={{cursor:'pointer'}} onClick={() => MenuItem(links[i].item)}><h3>{links[i].name}</h3></a>
+  			<a key={i} style={{cursor:'pointer'}} onClick={() => MenuItem(links[i].item)}><h3 className='DropdownMenu'>{links[i].name}</h3></a>
   			);
-  		})
+  		});
+	
+
+		
+
+
   	
 
   	// clickHuidanalyse,clickApotheeknieuws,clickHuisbereidingen,clickThuisgezondhuiszorg,clickTeam,clickHuisapotheker
@@ -22,7 +34,6 @@ const Container = ({MenuItem, Midden}) => {
 	// 		</div>
 	// 		)
 	
-
 	return (
 		<div className="container"> 
 			<div className="row">
@@ -35,9 +46,12 @@ const Container = ({MenuItem, Midden}) => {
 				
 				{Midden}
 
+					{//<Homepage setNieuws={MenuItem}/>
+				} 
+
 				<div className="col-md-3 d-none d-sm-block">
 					<div className="logo apotheek Craps">
-						<img alt='' src={require('./Afbeeldingen/apocrapslogo.png')}/>
+						<img alt='' src={require('../Afbeeldingen/apocrapslogo.png')}/>
 					</div>
 					
 					<div className="infoApotheek" style={{marginTop:'40px'}}>
@@ -54,7 +68,7 @@ const Container = ({MenuItem, Midden}) => {
 						
 					</p>
 					
-					<p> <span style={{width:'100%'}}><a href="" className="myContact" data-toggle="modal" data-target="#myContact"> Contact</a></span><br/>
+					<p> <span style={{width:'100%'}}><a href="" className="myContact" data-toggle="modal" onClick={setState}> Contact</a></span><br/>
 					</p>
 					
 							<p> <strong> Openingsuren</strong><br/>
@@ -77,6 +91,7 @@ const Container = ({MenuItem, Midden}) => {
 		</div>
 
 		);
+
 }
 
 export default Container;

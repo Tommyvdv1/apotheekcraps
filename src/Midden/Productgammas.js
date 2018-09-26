@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Apotheeknieuws = (
+export const Productgammas = (
 	<div className="col-md-6 col-xs-12">
 			<h1>Ontdek onze productgamma's</h1>
 			<p className="text-justify">Wij verdelen onder andere de producten van:</p>
