@@ -40,7 +40,7 @@ const Navbar = ({Home, MenuItem, setState}) => {
 				      </li>
 				    </ul>
 				    <form className="form-inline my-2 my-lg-0">
-				      	<a href="https://www.apotheeklimburg.be/"style={{paddingRight: "20px", color:"#C04363"}}>Wachtdiensten</a>
+				      	<a href="https://www.apotheeklimburg.be/#/wachtdienst/3900" style={{paddingRight: "20px", color:"#C04363"}}>Wachtdiensten</a>
 				  		<a onClick={setState} style={{color:"#C04363", cursor: 'pointer'}}>Contact</a>
 				    </form>
 				  </div>

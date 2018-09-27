@@ -21,7 +21,7 @@ setNieuws = () => {
 render() {
 	if(this.state.Home) {
 		return (
-		<div className="col-md-6 col-sm-12">
+		<div className="col-md-12 col-lg-6">
 			<Homepage setNieuws={this.setNieuws}/>
 		</div>
 		)
@@ -29,7 +29,7 @@ render() {
 	else {
 		
 		return (
-		<div className="col-md-6 col-sm-12">
+		<div className="col-md-12 col-lg-6">
 			<Griepcampagne resetNieuws={this.resetNieuws}/>
 		</div>
 		)

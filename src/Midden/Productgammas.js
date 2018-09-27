@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Productgammas = (
-	<div className="col-md-6 col-xs-12">
+	<div className="col-md-12 col-lg-6">
 			<h1>Ontdek onze productgamma's</h1>
 			<p className="text-justify">Wij verdelen onder andere de producten van:</p>
 			<a href="https://www.eau-thermale-avene.be/nl_BE">Avène</a><br/>

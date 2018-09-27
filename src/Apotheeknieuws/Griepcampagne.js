@@ -59,11 +59,13 @@ class Griepcampagne extends React.Component {
 				<p className=''>
 					→ Roken.
 				</p>
+				<br/>
+				<a>=> </a><button type='button' className='btn btn-secondary' onClick={this.props.resetNieuws}>Terug</button>
+				<br/>
 				<hr/>
-				<a>=></a><button className='buttom' style={{cursor: 'pointer'}} onClick={this.props.resetNieuws}> Terug </button>
 			</div>
 			)
 	}
 }
-
+//style={{cursor: 'pointer'}}
 export default Griepcampagne;

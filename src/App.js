@@ -61,7 +61,9 @@ MenuItem = (item) => {
                         MenuItem={this.MenuItem}
                         setState={this.State}
             />
-        		<Footer setState={this.State} />
+        		<Footer setState={this.State} 
+                    MenuItem={this.MenuItem}
+            />
         	</div>
       );
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Huisapotheker = (
-		<div className="col-md-6 col-xs-12">
+		<div className="col-md-12 col-lg-6">
 			<h1>Huisapotheker</h1>
 			<p className="text-justify font-weight-bold">
 				Sinds 1 oktober 2017 kunnen patiënten met een chronische aandoening een huisapotheker kiezen. Die zal hen proactief begeleiden bij hun medicatiegebruik door hen persoonlijk advies te geven en een schema bij te houden van alle medicatie die ze gebruiken. Dankzij die begeleiding krijgen patiënten meer controle over hun gezondheid en kunnen ze langer zelfstandig blijven. Om zo'n duurzame therapeutische relatie met hun apotheker op te starten, worden chronische patiënten vandaag uitgenodigd een overeenkomst te ondertekenen met de apotheker van hun keuze.

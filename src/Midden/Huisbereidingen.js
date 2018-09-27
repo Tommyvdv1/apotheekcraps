@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Huisbereidingen = (
-		<div className="col-md-6 col-xs-12">
+		<div className="col-md-12 col-lg-6">
 			<h1>Onze huisbereidingen</h1>
 			<p className="text-justify">
 				Sinds jaar en dag beheerst uw apotheker de kunst om geneesmiddelen te bereiden.

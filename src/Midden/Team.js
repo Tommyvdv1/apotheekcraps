@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Team = (
-<div className="col-md-6">
+<div className="col-md-12 col-lg-6">
 			<h1>Team</h1>
 			<p className="text-justify">Ons apotheekteam geeft u graag het nodige advies bij al uw vragen!</p>
 			<p className="text-justify">Ons Team bestaat uit:</p>

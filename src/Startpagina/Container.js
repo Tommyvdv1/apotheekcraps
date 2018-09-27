@@ -38,7 +38,7 @@ const Container  = ({MenuItem, Midden, setState}) => {
 		<div className="container"> 
 			<div className="row">
 	
-				<div className="col-md-3 d-none d-sm-none d-md-block">
+				<div className="col-lg-3 d-none d-lg-block d-xl-block">
 					<hr/>
 					{DropdownMenu}
 					<hr/>
@@ -49,9 +49,9 @@ const Container  = ({MenuItem, Midden, setState}) => {
 					{//<Homepage setNieuws={MenuItem}/>
 				} 
 
-				<div className="col-md-3 d-none d-sm-block">
+				<div className="col-lg-3 d-block">
 					<div className="logo apotheek Craps">
-						<img alt='' src={require('../Afbeeldingen/apocrapslogo.png')}/>
+						<img className="img-fluid" alt="Responsive" src={require('../Afbeeldingen/apocrapslogo.png')}/>
 					</div>
 					
 					<div className="infoApotheek" style={{marginTop:'40px'}}>
@@ -60,7 +60,7 @@ const Container  = ({MenuItem, Midden, setState}) => {
 					<span style={{width:'30%'}}>3900</span> <span style={{width:'70%'}}>OVERPELT</span> </p>
 				
 				
-					<p><a href="" data-toggle="modal" data-target="#myLocation"> Weergeven op plan</a></p>
+					<p><a href="https://www.google.com/maps/place/Kapelstraat+4,+3900+Overpelt,+Belgi%C3%AB/@51.194847,5.403723,16z/data=!4m5!3m4!1s0x47c12b6c18dda465:0x629ce36f40ddc21c!8m2!3d51.194847!4d5.4037228?hl=nl-NL" target="_blank" rel="noopener noreferrer"> Weergeven op plan</a></p>
 				
 					<p>
 						
@@ -82,7 +82,7 @@ const Container  = ({MenuItem, Midden, setState}) => {
 									zaterdag</i><br/>
 									09:00 tot 12:00</span> </p>
 					
-					<p><a href="https://www.apotheeklimburg.be/"> Wachtdiensten</a></p>
+					<p><a href="https://www.apotheeklimburg.be/#/wachtdienst/3900"> Wachtdiensten</a></p>
 					</div>
 				</div>
 

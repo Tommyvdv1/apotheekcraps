@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Thuisgezondheidszorg = (
-	<div className="col-md-6 col-xs-12">
+	<div className="col-md-12 col-lg-6">
 		<h1>Thuisgezondhuidszorg</h1>
 		<p className="text-justify">
 			Thuiszorg wordt de dag van vandaag steeds belangrijker door de voortdurende vergrijzing van de bevolking en het dalend aantal ligdagen in ziekenhuizen. Zorgbehoevenden geven de voorkeur aan verzorging in eigen omgeving.

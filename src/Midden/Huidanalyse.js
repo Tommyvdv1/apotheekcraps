@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Huidanalyse = (
-		<div className="col-md-6 col-xs-12">
+		<div className="col-md-12 col-lg-6">
 			<h1>Huidanalyse</h1>
 			<p className="text-justify"> Sinds kort beschikt onze apotheek over een Callegari huidanalyse-toestel. Hiermee kunnen wij verschillende parameters van uw huid meten zoals hydratatie, sebum, elasticiteit, melanine en pH van de huid. Wil je weten welk fototype je huid heeft? Ook dit kunnen we bepalen met het Callegari toestel. Zodat je met de juiste bescherming op vakantie kan vertrekken.</p>
 
