@@ -10,6 +10,7 @@ export const Productgammas = (
 			<a href="https://www.ixx.be/">iXX Pharma</a><br/>
 			<a href="https://lescouleursdenoir.com/">Les Couleurs De Noir</a><br/>
 			<a href="https://www.sanas.be/">Sanas</a><br/>
+			<a href="https://www.klorane.com/be-nl">Klorane</a><br/>
 			<br/>
 			<p className="text-justify">Wenst u een product van een ander gamma, aarzel niet ons te contacteren.</p>
 			<hr/>

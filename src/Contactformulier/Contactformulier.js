@@ -1,7 +1,6 @@
 import React from 'react';
 import ReCAPTCHA from "react-google-recaptcha";
-
-
+//import FileInput from 'react-file-input';
 
 class Contactformulier extends React.Component {
 
@@ -13,6 +12,7 @@ constructor() {
       email:'',
       subject:'',
       message:'',
+      file: {file:'',name:''},     
       recaptcha: false,
     }
   }
@@ -35,7 +35,29 @@ subjectChange = (event) => {
 
 messageChange = (event) => {
 	this.setState({message:event.target.value});
+	console.log(this.state.message);
 }
+
+fileChange = (event) => {
+
+    const reader  = new FileReader();
+	var newObject = '';
+	
+	const name = event.target.files[0].name;
+	//this.setState({file: {name: name}});
+
+	reader.onload = (dataURL) => {
+	    // The file's text will be printed here
+		newObject = dataURL.target.result;
+		this.setState({file: {file: newObject, name: name}});
+		console.log(this.state.file);
+	    }
+	
+
+    reader.readAsDataURL(event.target.files[0]);
+	
+}
+
 
 recaptchaChange =() => {
 	console.log(this.state.recaptcha);
@@ -49,7 +71,12 @@ recaptchaChange =() => {
 }
 
 onButtonClick = (event) => {
-	fetch('https://young-reaches-39897.herokuapp.com/sendmail', {
+	//const formData = new FormData();
+    //formData.append('file',this.state.file);
+    //'https://young-reaches-39897.herokuapp.com/sendmail'
+    //'http://localhost:3001/sendmail'
+    // application/json
+	fetch('https://bj-eu-server.herokuapp.com/sendmail', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -57,13 +84,14 @@ onButtonClick = (event) => {
         name_last: this.state.name_last,
         email: this.state.email,
         subject: this.state.subject,
-        message: this.state.message
-        })
+        message: this.state.message,
+        file: this.state.file,
+        }),
+      	
     })
     .then(response => response.json())
     .then(res => window.alert(res));
     event.preventDefault();
-    console.log("nu nog teruggaan naar de homepage");
     this.props.Home();
 }
 
@@ -117,11 +145,17 @@ render () {
 							<textarea id="message" name="message" className="form-control input-lg" rows="6" onChange={this.messageChange} required placeholder=" Typ hier uw  boodschap"></textarea>
 						</div>
 					</div>
+					<div className="form-group" encType="multipart/form-data">  
+						<label className="col-md-10 control-label" htmlFor="message"> Bijlage: <font size="2">(Indien gewenst kan u hier een foto, bestand, ... toevoegen)</font></label>  
+						<div className="col-md-3">
+							<input id="image" name="image" type='file'  className="form-control-file-md" onChange={this.fileChange}/>
+						</div>
+					</div>
 					<div className="form-group">
-					 	<label className="col-md-2 control-label" htmlFor="recaptcha"></label>
-					 	<div className="col-md-10">
-					 		<ReCAPTCHA className="g-recaptcha" onChange={this.recaptchaChange} sitekey="6Lf5m3EUAAAAAKg9S93SY5b_JB5_170IZ0H6_7yG" />
-					 	</div>
+					  	<label className="col-md-2 control-label" htmlFor="recaptcha"></label>
+					  	<div className="col-md-10">
+					  		<ReCAPTCHA className="g-recaptcha" onChange={this.recaptchaChange} sitekey="6Lf5m3EUAAAAAKg9S93SY5b_JB5_170IZ0H6_7yG" />
+					  	</div>
 					</div>
 					{// disabled toevoegen achter class="btn btn-success" bij button!!! 
 					}
