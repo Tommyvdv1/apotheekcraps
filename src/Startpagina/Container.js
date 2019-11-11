@@ -1,54 +1,44 @@
 import React from 'react';
 import {links} from './Links';
 import'./Container.css';
+import {connect} from 'react-redux';
+import { MenuItem, setState } from '../Actions';
 
+const mapStateToProps = state => {
+	return {
+		Midden: state.Reducer.midden,	
+	}
 
+}
 
-const Container  = ({MenuItem, Midden, setState}) => {
+const mapsDispatchToProps = (dispatch) => {
+    return {
+        MenuItem: (index) => dispatch(MenuItem(index)),
+        setState: () => dispatch(setState()),
+    }
+}
 
-		
+class Container extends React.Component  {
+	
 
+	render() {
 
-
+		console.log('rerender midden');
+		const {Midden,MenuItem,setState} = this.props;
 		const DropdownMenu = links.map((value, i) => {
   			return (
-  			<a key={i} style={{cursor:'pointer'}} onClick={() => MenuItem(links[i].item)}><h3 className='DropdownMenu'>{links[i].name}</h3></a>
+  				<a key={i} style={{cursor:'pointer'}} onClick={() => MenuItem(links[i].item)}><h3 className='DropdownMenu'>{links[i].name}</h3></a>
   			);
   		});
-	
-
-		
-
-
-  	
-
-  	// clickHuidanalyse,clickApotheeknieuws,clickHuisbereidingen,clickThuisgezondhuiszorg,clickTeam,clickHuisapotheker
-	// const DropdownMenu = (
-	// 		<div>
-	// 		<a style={{cursor:'pointer'}} onClick={clickHuidanalyse}><h3>Huidanalyse</h3></a>
-	// 		<a style={{cursor:'pointer'}} onClick={clickApotheeknieuws}><h3>Apotheeknieuws</h3></a>
-	// 		<a style={{cursor:'pointer'}} onClick={clickHuisbereidingen}><h3>Huisbereidingen</h3></a>
-	// 		<a style={{cursor:'pointer'}} onClick={clickThuisgezondhuiszorg}><h3>Thuisgezondhuiszorg</h3></a>
-	// 		<a style={{cursor:'pointer'}} onClick={clickHuisapotheker}><h3>Huisapotheker</h3></a>
-	// 		<a style={{cursor:'pointer'}} onClick={clickTeam}><h3>Team</h3></a>
-	// 		</div>
-	// 		)
-	
 	return (
 		<div className="container"> 
 			<div className="row">
-	
 				<div className="col-lg-3 d-none d-lg-block d-xl-block">
 					<hr/>
 					{DropdownMenu}
 					<hr/>
 				</div>
-				
-				{Midden}
-
-					{//<Homepage setNieuws={MenuItem}/>
-				} 
-
+				{Midden[0]}
 				<div className="col-lg-3 d-block">
 					<div className="logo apotheek Craps">
 						<img className="img-fluid" alt="Responsive" src={require('../Afbeeldingen/apocrapslogo.png')}/>
@@ -92,6 +82,7 @@ const Container  = ({MenuItem, Midden, setState}) => {
 
 		);
 
+	}
 }
 
-export default Container;
+export default connect(mapStateToProps, mapsDispatchToProps)(Container);

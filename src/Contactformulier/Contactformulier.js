@@ -1,6 +1,15 @@
 import React from 'react';
 import ReCAPTCHA from "react-google-recaptcha";
-//import FileInput from 'react-file-input';
+import { connect } from 'react-redux';
+
+import { Home } from '../Actions';
+
+
+const mapsDispatchToProps = (dispatch) => {
+    return {
+        Home: () => dispatch(Home()),
+    }
+}
 
 class Contactformulier extends React.Component {
 
@@ -176,8 +185,9 @@ render () {
 					</div>
 				</form>		
       		</div>
-		)
-}
+		);
+};
 }
 
-export default Contactformulier;
+
+export default connect(null, mapsDispatchToProps)(Contactformulier);

@@ -1,10 +1,8 @@
 import React from 'react';
 
-class Griepcampagne extends React.Component {
-
-	render() {
-		return(
-			<div>
+export const Griepcampagne =
+		(
+			<div className="col-md-12 col-lg-6">
 				<h1>Vaccinatie griep en pneumokokken</h1>
 				<p className='font-weight-bold'>Griep is een heel besmettelijke ziekte</p>
 				<p className=''>
@@ -59,13 +57,7 @@ class Griepcampagne extends React.Component {
 				<p className=''>
 					→ Roken.
 				</p>
-				<br/>
-				<a>=> </a><button type='button' className='btn btn-secondary' onClick={this.props.resetNieuws}>Terug</button>
-				<br/>
 				<hr/>
 			</div>
 			)
-	}
-}
-//style={{cursor: 'pointer'}}
-export default Griepcampagne;
+	

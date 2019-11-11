@@ -1,9 +1,20 @@
 import React from 'react';
 import {Disclaimer} from './Disclaimer';
+import {connect} from 'react-redux';
+import { MenuItem, setState } from '../Actions';
+
+const mapsDispatchToProps = (dispatch) => {
+    return {
+        MenuItem: (index) => dispatch(MenuItem(index)),
+        setState: () => dispatch(setState()),
+    }
+}
 
 
+class Footer extends React.Component  {
 
-const Footer = ({setState, MenuItem}) => {
+	render() {
+		const {MenuItem,setState} = this.props;
 	return (
 
 		<div className="container">
@@ -29,5 +40,6 @@ const Footer = ({setState, MenuItem}) => {
 
 		);
 }
+}
 
-export default Footer;
+export default connect(null, mapsDispatchToProps)(Footer);

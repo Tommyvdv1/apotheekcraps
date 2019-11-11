@@ -1,27 +1,29 @@
 import React from 'react';
 import {links} from './Links';
+import {connect} from 'react-redux';
+import { Home, MenuItem, setState } from '../Actions';
 
-const Navbar = ({Home, MenuItem, setState}) => {
-	
-	const DropdownMenu = links.map((value, i) =>{
+const mapsDispatchToProps = (dispatch) => {
+    return {
+        Home: () => dispatch(Home()),
+        MenuItem: (index) => dispatch(MenuItem(index)),
+        setState: () => dispatch(setState()),
+    }
+}
+
+
+class Navbar extends React.Component  {
+
+	render() {
+		console.log('rerender navbar');
+		const {Home,MenuItem,setState} = this.props;
+		const DropdownMenu = links.map((value, i) =>{
   			return (
   			<a key={i} className="dropdown-item" style={{cursor:'pointer'}} onClick={() => MenuItem(links[i].item)}>{links[i].name}</a>
   			);
   		})
-
-	// clickHuidanalyse, clickApotheeknieuws, clickHuisbereidingen, clickThuisgezondhuiszorg, clickHuisapotheker, clickTeam
-	// const DropdownMenu = (
-	// 		<div>
-	// 		<a className="dropdown-item" style={{cursor:'pointer'}} onClick={clickHuidanalyse}>Huidanalyse</a>
-	// 		<a className="dropdown-item" style={{cursor:'pointer'}} onClick={clickApotheeknieuws}>Apotheeknieuws</a>
-	// 		<a className="dropdown-item" style={{cursor:'pointer'}} onClick={clickHuisbereidingen}>Huisbereidingen</a>
-	// 		<a className="dropdown-item" style={{cursor:'pointer'}} onClick={clickThuisgezondhuiszorg}>Thuisgezondhuiszorg</a>
-	// 		<a className="dropdown-item" style={{cursor:'pointer'}} onClick={clickHuisapotheker}>Huisapotheker</a>
-	// 		<a className="dropdown-item" style={{cursor:'pointer'}} onClick={clickTeam}>Team</a>
-	// 		</div>
-	// 		)
-
 	return (
+		
 			<div className="container">
 				<nav className="navbar navbar-expand navbar-light">
 
@@ -39,16 +41,16 @@ const Navbar = ({Home, MenuItem, setState}) => {
 				        </div>
 				      </li>
 				    </ul>
-				    <form className="form-inline my-2 my-lg-0">
+				    <div className="form-inline my-2 my-lg-0">
 				      	<a href="https://www.apotheeklimburg.be/#/wachtdienst/3900" style={{paddingRight: "20px", color:"#C04363"}}>Wachtdiensten</a>
 				  		<a onClick={setState} style={{color:"#C04363", cursor: 'pointer'}}>Contact</a>
-				    </form>
+				    </div>
 				  </div>
 				</nav>
 			</div>
 		)
-
+}
 }
 
 
-export default Navbar;
+export default connect(null, mapsDispatchToProps)(Navbar);

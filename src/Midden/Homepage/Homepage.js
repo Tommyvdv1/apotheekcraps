@@ -1,9 +1,19 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import { MenuItem } from '../../Actions';
+import {Griepcampagne} from '../../Apotheeknieuws/Griepcampagne';
 
-const Homepage = ({setNieuws}) => {
-	return (
-			<div>
-					<img  src={require('../../Afbeeldingen/griepcampagne.jpg')} className="img-fluid" alt="Responsive" style={{cursor:'pointer'}} onClick={setNieuws}/>
+const mapsDispatchToProps = (dispatch) => {
+    return {
+        MenuItem: (index) => dispatch(MenuItem(index)),
+    }
+}
+
+class Homepage extends React.Component {
+	render() {
+		return(
+			<div className="col-md-12 col-lg-6">
+					<img  src={require('../../Afbeeldingen/griepcampagne.jpg')} className="img-fluid" alt="Responsive" style={{cursor:'pointer'}} onClick={() =>this.props.MenuItem(Griepcampagne)}/>
 					<br/>
 					<hr/>
 					<br/>
@@ -22,9 +32,11 @@ const Homepage = ({setNieuws}) => {
 					<hr/>
 			</div>
 		);
+	}
 }
 
-export default Homepage;
+export default connect(null, mapsDispatchToProps)(Homepage);
+
 
 
 			
