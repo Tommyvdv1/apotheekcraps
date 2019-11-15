@@ -70,11 +70,11 @@ export const Thuisgezondheidszorg = (
 		</div>
 		<div className="col-6">
 			
-			<img src={require('../Afbeeldingen/antirefluxbedje.jpg')} className="img-fluid" alt="Responsive"/>
+			<img src={require('../Afbeeldingen/antirefluxbedje.webp')} className="img-fluid" alt="Responsive"/>
 			
 		</div>
 		</div>
-	<img src={require('../Afbeeldingen/thuisgezondheidszorg.jpg')} className="img-fluid" alt="Responsive"/>
+	<img src={require('../Afbeeldingen/thuisgezondheidszorg.webp')} className="img-fluid" alt="Responsive"/>
 	
 </div>
 		

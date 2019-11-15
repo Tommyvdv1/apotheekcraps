@@ -56,7 +56,7 @@ export const Huisapotheker = (
 				</li>
 			</ul>
 			<h3>Voorbeeld van een medicatieschema</h3>
-			<img src={require('../Afbeeldingen/medicatieschema.png')} className="img-fluid" alt="Responsive"/>
+			<img src={require('../Afbeeldingen/medicatieschema.webp')} className="img-fluid" alt="Responsive"/>
 			<small>
 				<u>Bronnen:</u><br/>
 				<a href="http://www.apb.be">www.apb.be</a><br/>

@@ -18,8 +18,8 @@ class Footer extends React.Component  {
 	return (
 
 		<div className="container">
-			<div className="row">
-				<div className="d-block col" style={{borderTop:"1px solid #eee",textAlign:'center', padding:'20px'}}>
+			<div className="row" style={{borderTop:"1px solid #eee",textAlign:'center', padding:'20px'}}>
+				<div className="d-block col-md-6 col-lg-12 col-xl-12">
 					<p>
 						<span style={{fontWeight:'700', fontSize:'120%',width:'100%'}}>Apotheek Craps</span>
 						<br/>
@@ -33,6 +33,19 @@ class Footer extends React.Component  {
 						N° APB: 722904 - BTW: 0874832310</small>
 					</p>
 			 		<p><a href="" data-toggle="modal" onClick={()=>MenuItem(Disclaimer)}> Disclaimer</a></p>
+				</div>
+				<div className="col-md-6 d-lg-none d-xl-none">
+					<p> <strong> Openingsuren</strong>
+						<br/>
+						<span ><i>Maandag, dinsdag,</i><br/>  
+									<i>donderdag en vrijdag</i><br/>
+									09:00 tot 12:00<br/>
+									14:00 tot 18:30<br/>
+									<br/>
+									<i>Woensdag en 
+									zaterdag</i><br/>
+									09:00 tot 12:00</span> 
+					</p>
 				</div>
 			</div>
 		</div>

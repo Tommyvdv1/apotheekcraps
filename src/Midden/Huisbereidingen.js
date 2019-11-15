@@ -46,7 +46,7 @@ export const Huisbereidingen = (
 				</ul>
 			</span>
 			<h3>Voor uw gezondheid en portefeuille zijn bereidingen dus een grote troef!</h3>
-			<img src={require('../Afbeeldingen/huisbereidingen.jpg')} className="img-fluid" alt="Responsive"/>
+			<img src={require('../Afbeeldingen/huisbereidingen.webp')} className="img-fluid" alt="Responsive"/>
 
 		</div>
 );

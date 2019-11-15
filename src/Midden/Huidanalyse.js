@@ -15,11 +15,11 @@ export const Huidanalyse = (
 			Interesse? Contacteer ons via telefoon, mail, of spring gerust eens binnen.</p>
 
 			
-			<img src={require('../Afbeeldingen/zon.jpg')} className="img-fluid" alt="Responsive"/><br/>
+			<img src={require('../Afbeeldingen/zon.webp')} className="img-fluid" alt="Responsive"/><br/>
 			<p className="text-justify">
 			Ook de mannenhuid wordt blootgesteld aan allerlei factoren en heeft de nodige verzorging nodig. Laat uw huid testen en krijgt productadvies afgestemd op uw huid.</p>
 			
-			<img src={require('../Afbeeldingen/Men.jpg')} className="img-fluid" alt="Responsive"/>
+			<img src={require('../Afbeeldingen/Men.webp')} className="img-fluid" alt="Responsive"/>
 			<br/>
 			
 			<div className="embed-responsive embed-responsive-16by9">

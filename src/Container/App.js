@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 import './App.css';
-import Hoofding from '../Startpagina/Hoofding';
-import Navbar from '../Startpagina/Navbar';
-import Container from '../Startpagina/Container';
-import Footer from '../Startpagina/Footer';
-import Contactformulier from '../Contactformulier/Contactformulier';
 import { connect } from 'react-redux';
+const Hoofding = React.lazy(() => import('../Startpagina/Hoofding'));
+const Navbar = React.lazy(() => import('../Startpagina/Navbar'));
+const Container = React.lazy(() => import('../Startpagina/Container'));
+const Footer = React.lazy(() => import('../Startpagina/Footer'));
+const Contactformulier = React.lazy(() => import('../Contactformulier/Contactformulier'));
+
 
 const mapStateToProps = state => {
     return {
@@ -22,17 +23,21 @@ class App extends Component {
     if (!Contactform) {
       return (
       	<div>
+          <Suspense fallback={<div>Loading...</div>}>
         		<Hoofding />
             <Navbar/>
             <Container/>
             <Footer/>
+          </Suspense>
         </div>
       );
     }
     else {
       return (
         <div>
-          <Contactformulier/>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Contactformulier/>
+          </Suspense>
         </div>
         )
     }

@@ -10,11 +10,11 @@ import thunkMiddleware from 'redux-thunk';
 import {Reducer} from './Reducers';
 
 const rootReducer = combineReducers({Reducer})
-const store = createStore(rootReducer, compose(applyMiddleware(thunkMiddleware),window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
+const store = createStore(rootReducer, compose(applyMiddleware(thunkMiddleware)))//,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION)__())
 
 ReactDOM.render(
 	<Provider store={store}>
 		<App />
 	</Provider>,
 	document.getElementById('root'));
-serviceWorker.unregister();
+serviceWorker.register();

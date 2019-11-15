@@ -39,9 +39,9 @@ class Container extends React.Component  {
 					<hr/>
 				</div>
 				{Midden[0]}
-				<div className="col-lg-3 d-block">
+				<div className="col-lg-3 d-none d-lg-block d-xl-block">
 					<div className="logo apotheek Craps">
-						<img className="img-fluid" alt="Responsive" src={require('../Afbeeldingen/apocrapslogo.png')}/>
+						<img className="img-fluid" alt="Responsive" src={require('../Afbeeldingen/apocrapslogo.webp')}/>
 					</div>
 					
 					<div className="infoApotheek" style={{marginTop:'40px'}}>
